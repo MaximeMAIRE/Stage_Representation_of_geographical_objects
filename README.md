@@ -1,10 +1,22 @@
 # Stage
 
-## reasonner_java :
+## reasoner_java :
+
+### fait :
+- Affichage de toutes les instances, avec leur(s) type(s) et leur(s) propriété(s), lorsque l'ontologie est consistante.
 
 ### à faire :
-Actuellement, si l'ontologie est cohérente :
-- je charge l'ontologie correctement, j'arrive à afficher les axiomes existants dans l'ontologie.
-Les prochaines modifications seront sur la récupération des axiomes inféré et non sur les axiomes déjà existants.
+- Si l'ontologie est incohérente, afficher le/les raisonnements qui ont amené a une incohérence.
 
-Si l'ontologie est incohérente, pour l'instant, je ne fais rien. Objectifs afficher le/les raisonnements qui ont amené a une incohérence.
+### Modifications :
+- Afficher seulement ce qui inferred, et pas ce qui est asserted (ontologie consistante).
+
+
+## Tester reasoner_java
+
+### Complier :
+- mvn package
+
+### Executer :
+- java -jar target/my-project-1.0-SNAPSHOT-jar-with-dependencies.jar
+
