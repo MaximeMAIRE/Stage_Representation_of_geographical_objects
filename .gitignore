@@ -1,2 +1,3 @@
 onto_herelles.owl
 reasoner_Java/target
+reasoner_Java/target/*
