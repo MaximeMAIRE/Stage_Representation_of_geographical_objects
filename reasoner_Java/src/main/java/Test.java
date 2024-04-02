@@ -2,6 +2,7 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.OWLReasonerRuntimeException;
+import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
 import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -16,31 +17,32 @@ import org.semanticweb.HermiT.Reasoner.ReasonerFactory;
 import java.io.InputStream;
 import java.util.Set;
 
+import com.clarkparsia.owlapi.explanation.DefaultExplanationGenerator;
+import com.clarkparsia.owlapi.explanation.ExplanationGenerator;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import com.clarkparsia.owlapi.explanation.util.ExplanationProgressMonitor;
+import com.clarkparsia.owlapi.explanation.util.*;
+
 public class Test {
     public void loadOntology() throws OWLOntologyCreationException {
-        OWLOntologyManager om = OWLManager.createOWLOntologyManager();
-        OWLDataFactory factory = om.getOWLDataFactory();
+        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        OWLDataFactory factory = manager.getOWLDataFactory();
         InputStream inputStream = getClass().getResourceAsStream("/onto_herelles.owl");
-        OWLOntology onto = om.loadOntologyFromOntologyDocument(inputStream);
-        checkConsistencyAndInfer(onto);
+        OWLOntology onto = manager.loadOntologyFromOntologyDocument(inputStream);
+        checkConsistencyAndInfer(onto, manager);
     }
 
-    public void checkConsistencyAndInfer(OWLOntology ontology) {
+    public void checkConsistencyAndInfer(OWLOntology ontology, OWLOntologyManager manager) {
         OWLReasonerFactory reasonerFactory = new ReasonerFactory();
         OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
 
         if (reasoner.isConsistent()) {
             System.out.println("L'ontologie est cohérente.");
-
             /*
             Ca ne donne que les axiomes qui existent deja dans l'ontologie, je souhaite récuperer les axiomes inferrer
             sans avoir les aximes de base.
             */
-
-            //Pas de doublons dans les Set :
             Set<OWLClassAssertionAxiom> inferredAxioms = ontology.getAxioms(AxiomType.CLASS_ASSERTION);
-            //peut avor des doublons dans les listes :
-            //List<OWLClassAssertionAxiom> inferredAxioms = new ArrayList<>(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
             for (OWLClassAssertionAxiom axiom : inferredAxioms) {
                 System.out.println("Inferred axiom: " + axiom);
             }
@@ -70,7 +72,20 @@ public class Test {
             printSubclassesAndInstance(reasoner);
         } else {
             System.out.println("L'ontologie est inconsistante. Voici les instances à l'origine de cette inconsistence :");
-            printInconsistentInstances(reasoner);
+
+            Set<OWLClass> classes = ontology.getClassesInSignature();
+            for(OWLClass classe : classes)
+            {
+                try{
+                    reasoner.isSatisfiable(classe);
+                    System.out.println("Classe : " + classe + " oui !");
+                }catch(InconsistentOntologyException e) {
+                    //ExplanationProgressMonitor progressMonitor = new ExplanationProgressMonitor();
+                    //ExplanationGenerator explanationGenerator = new DefaultExplanationGenerator(manager, reasonerFactory, ontology, reasoner, progressMonitor);
+                    //Set<OWLAxiom> explication = explanationGenerator.getExplanation(classe);
+                    //System.out.println("Classe : " + classe + " non !" + explication);
+                }
+            }
         }
 
         reasoner.dispose();
