@@ -19,6 +19,7 @@ import java.util.Set;
 public class Test {
     public void loadOntology() throws OWLOntologyCreationException {
         OWLOntologyManager om = OWLManager.createOWLOntologyManager();
+        OWLDataFactory factory = om.getOWLDataFactory();
         InputStream inputStream = getClass().getResourceAsStream("/onto_herelles.owl");
         OWLOntology onto = om.loadOntologyFromOntologyDocument(inputStream);
         checkConsistencyAndInfer(onto);
@@ -27,7 +28,6 @@ public class Test {
     public void checkConsistencyAndInfer(OWLOntology ontology) {
         OWLReasonerFactory reasonerFactory = new ReasonerFactory();
         OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
-
 
         if (reasoner.isConsistent()) {
             System.out.println("L'ontologie est cohérente.");
@@ -38,12 +38,34 @@ public class Test {
             */
 
             //Pas de doublons dans les Set :
-            //Set<OWLClassAssertionAxiom> inferredAxioms = ontology.getAxioms(AxiomType.CLASS_ASSERTION);
+            Set<OWLClassAssertionAxiom> inferredAxioms = ontology.getAxioms(AxiomType.CLASS_ASSERTION);
             //peut avor des doublons dans les listes :
-            List<OWLClassAssertionAxiom> inferredAxioms = new ArrayList<>(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
-
+            //List<OWLClassAssertionAxiom> inferredAxioms = new ArrayList<>(ontology.getAxioms(AxiomType.CLASS_ASSERTION));
             for (OWLClassAssertionAxiom axiom : inferredAxioms) {
                 System.out.println("Inferred axiom: " + axiom);
+            }
+
+            Set<OWLNamedIndividual> individuals = ontology.getIndividualsInSignature();
+            Set<OWLObjectProperty> objProperties = ontology.getObjectPropertiesInSignature();
+            for (OWLNamedIndividual individual : individuals) {
+                System.out.println("\n\n\nINDIVIDU : "+ individual);
+                /* 
+                ICI on récupère les types (J'aimerais récupèrer que les types inffered et pas les asserted, 
+                mais pour l'instant je n'y arrive pas)
+                */
+                Set<OWLClass> types = reasoner.getTypes(individual, false).getFlattened();
+                if (!types.isEmpty()) {
+                    System.out.println("L'individu " + individual + " a les types suivants : " + types);
+                }
+                /*
+                ICI on recupère les object_property :
+                */
+                for(OWLObjectProperty objProperty : objProperties){
+                    NodeSet<OWLNamedIndividual> obj_prop = reasoner.getObjectPropertyValues(individual, objProperty);
+                    if(!obj_prop.isEmpty()){
+                        System.out.println("L'individu " + individual + " a les props : " + obj_prop);    
+                    }
+                }
             }
             printSubclassesAndInstance(reasoner);
         } else {
