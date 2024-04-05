@@ -12,34 +12,30 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-<dependencies>
-    <dependency>
-        <groupId>net.sourceforge.owlapi</groupId>
-        <artifactId>owlapi-distribution</artifactId>
-        <version>5.1.19</version>
-        <exclusions>
-            <exclusion> 
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-            </exclusion>
-            <exclusion> 
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-            </exclusion>
-        </exclusions> 
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cassandra</groupId>
-        <artifactId>cassandra-all</artifactId>
-        <version>0.8.1</version>
-    </dependency>
-    <dependency>
-        <groupId>net.sourceforge.owlapi</groupId>
-        <artifactId>org.semanticweb.hermit</artifactId>
-        <version>1.4.3.517</version>
-    </dependency>
-</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-distribution</artifactId>
+            <version>5.1.20</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>org.semanticweb.hermit</artifactId>
+            <version>1.4.5.519</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlexplanation</artifactId>
+            <version>2.0.1</version>
+        </dependency>
 
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>jfact</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
