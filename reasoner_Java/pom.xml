@@ -26,13 +26,30 @@
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlexplanation</artifactId>
-            <version>2.0.1</version>
+            <version>5.0.0</version>
         </dependency>
+
+        <!-- <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>pellet-owlapi-ignazio1977</artifactId>
+            <version>2.4.0-ignazio1977</version>
+        </dependency> -->
 
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>jfact</artifactId>
             <version>5.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.12</version>
         </dependency>
 
     </dependencies>
