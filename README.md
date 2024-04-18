@@ -20,3 +20,6 @@
 ### Executer :
 - java -jar target/my-project-1.0-SNAPSHOT-jar-with-dependencies.jar
 
+## Projet :
+Le fichier onto_test.ipynb appelle le code java pour les explications et le code CEO (venant du git CEO), pour récupérer les potentielles corrections.
+Ne pas oublier de restart le kernel jupyter avant chaque "run all"
