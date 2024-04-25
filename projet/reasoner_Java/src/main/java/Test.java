@@ -233,15 +233,19 @@ public class Test {
             if (explanations != null && !explanations.isEmpty()){
                 for (Explanation<OWLAxiom> explanation : explanations){
                     System.out.println("\n\n\nExplanatin number : " + x + "\n");
+                    int k = 1;
                     for (OWLAxiom axiom : explanation.getAxioms()){
-                        System.out.println("Axiom :" + axiom);
+                        String axiomS = axiom.toString();
+                        axiomS = axiomS.replace("http://test.org/onto_herelles.owl#","");
+                        System.out.println(k +" :" + axiomS);
+                        k = k+1;
                     }
                     x = x + 1;
                 }
             }
 
             // ici on affiche les axiomes qui sont dans toutes les explications:
-            System.out.println("\n\nExplications universelles :");
+            // System.out.println("\n\nExplications universelles :");
             List<String> listAxiom = createListAxiom(explanations);
             int[] intArray = createTabOccurenceAxioms(listAxiom.size());
             computeOccurenceAxiom(listAxiom, intArray, explanations);
