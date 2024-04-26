@@ -2,6 +2,9 @@ import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
+
+import uk.ac.manchester.cs.owl.owlapi.OWLObjectPropertyAssertionAxiomImpl;
+
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -244,22 +247,38 @@ public class Test {
                 }
             }
 
+            System.out.println("\nObjects inconsistants :");
+            for (Explanation<OWLAxiom> explanation : explanations){
+                for (OWLAxiom axiom : explanation.getAxioms()){
+                    if(axiom instanceof OWLObjectPropertyAssertionAxiomImpl)
+                    {
+                        if(axiom.toString().contains("contains_object"))
+                        {
+                            System.out.println(axiom);
+                        }
+                    }
+                    
+                }
+            }
+
             // ici on affiche les axiomes qui sont dans toutes les explications:
             // System.out.println("\n\nExplications universelles :");
-            List<String> listAxiom = createListAxiom(explanations);
-            int[] intArray = createTabOccurenceAxioms(listAxiom.size());
-            computeOccurenceAxiom(listAxiom, intArray, explanations);
+            // List<String> listAxiom = createListAxiom(explanations);
+            // int[] intArray = createTabOccurenceAxioms(listAxiom.size());
+
+            // /// Liste tous les axiomes et avec leurs occurences dans toutes les explications 
+            // computeOccurenceAxiom(listAxiom, intArray, explanations);
             // printAxiom(listAxiom, intArray);
 
             // System.out.println("ICI SONT LES AXIOMS APPARTENANT A TOUS LES EXPLICATIONS :\n");
             // printUniversalAxiom(listAxiom, intArray);
             
-            List<String> listObject = DetectionIndividualInconsistant(listAxiom);
-
-            System.out.println("\n\nObjects inconsistants :");
-            for (String s2 : listObject){
-                System.out.println(s2);
-            }
+            /// Recupere puis affiche les objets inconsistants (méthode de boucher)
+            // List<String> listObject = DetectionIndividualInconsistant(listAxiom);
+            // System.out.println("\n\nObjects inconsistants :");
+            // for (String s2 : listObject){
+            //     System.out.println(s2);
+            // }
 
         } catch(ExplanationException e){
             System.out.println("Erreur lors de la recuperation de l'explication pour l'inconsistance de l'ontologie.\nErreur : " + e);
