@@ -72,24 +72,24 @@ public class Test {
      */
     private void printConsistantOntology(OWLReasoner reasoner, OWLOntology ontology) {
         System.out.println("L'ONTOLOGIE EST COHERENTE !\n\n");
-        for (OWLAxiom axiom : ontology.getAxioms()) {
-            System.out.println(axiom);
-        }
-        Set<OWLNamedIndividual> individuals = ontology.getIndividualsInSignature();
-        Set<OWLObjectProperty> objProperties = ontology.getObjectPropertiesInSignature();
-        for (OWLNamedIndividual individual : individuals) {
-            System.out.println("\n\n\nINDIVIDU : "+ individual);
-            Set<OWLClass> types = reasoner.getTypes(individual, false).getFlattened();
-            if (!types.isEmpty()) {
-                System.out.println("L'individu " + individual + " a les types suivants : " + types);
-            }
-            for(OWLObjectProperty objProperty : objProperties){
-                NodeSet<OWLNamedIndividual> obj_prop = reasoner.getObjectPropertyValues(individual, objProperty);
-                if(!obj_prop.isEmpty()){
-                    System.out.println("L'individu " + individual + " a les props : " + obj_prop);    
-                }
-            }
-        }
+        // for (OWLAxiom axiom : ontology.getAxioms()) {
+        //     System.out.println(axiom);
+        // }
+        // Set<OWLNamedIndividual> individuals = ontology.getIndividualsInSignature();
+        // Set<OWLObjectProperty> objProperties = ontology.getObjectPropertiesInSignature();
+        // for (OWLNamedIndividual individual : individuals) {
+        //     System.out.println("\n\n\nINDIVIDU : "+ individual);
+        //     Set<OWLClass> types = reasoner.getTypes(individual, false).getFlattened();
+        //     if (!types.isEmpty()) {
+        //         System.out.println("L'individu " + individual + " a les types suivants : " + types);
+        //     }
+        //     for(OWLObjectProperty objProperty : objProperties){
+        //         NodeSet<OWLNamedIndividual> obj_prop = reasoner.getObjectPropertyValues(individual, objProperty);
+        //         if(!obj_prop.isEmpty()){
+        //             System.out.println("L'individu " + individual + " a les props : " + obj_prop);    
+        //         }
+        //     }
+        // }
     }
     /**
      * Create a list of string of unique axioms and return it.
@@ -174,10 +174,10 @@ public class Test {
      * 
      * @return Nothing
      */
-    private void printUniversalAxiom(List<String> listAxiom, int[] intArray){
+    private void printUniversalAxiom(List<String> listAxiom, int[] intArray, int nb_explanation){
         int i = 0;
         for(String s : listAxiom){
-            if(intArray[i] == listAxiom.size()){
+            if(intArray[i] == nb_explanation){
                 System.out.println("Axiome : " + s);
             }
             i = i+1;
@@ -250,6 +250,11 @@ public class Test {
             System.out.println("\nObjects inconsistants :");
             for (Explanation<OWLAxiom> explanation : explanations){
                 for (OWLAxiom axiom : explanation.getAxioms()){
+                    if (axiom instanceof OWLClassAssertionAxiom){
+                        if (axiom.toString().contains("Remblais")){
+                            System.out.println(axiom);
+                        }
+                    }
                     if(axiom instanceof OWLObjectPropertyAssertionAxiomImpl)
                     {
                         if(axiom.toString().contains("contains_object"))
@@ -264,19 +269,19 @@ public class Test {
                 }
             }
 
-            // ici on affiche les axiomes qui sont dans toutes les explications:
+            //ici on affiche les axiomes qui sont dans toutes les explications:
             // System.out.println("\n\nExplications universelles :");
             // List<String> listAxiom = createListAxiom(explanations);
             // int[] intArray = createTabOccurenceAxioms(listAxiom.size());
 
-            // /// Liste tous les axiomes et avec leurs occurences dans toutes les explications 
+            // //Liste tous les axiomes et avec leurs occurences dans toutes les explications 
             // computeOccurenceAxiom(listAxiom, intArray, explanations);
             // printAxiom(listAxiom, intArray);
 
-            // System.out.println("ICI SONT LES AXIOMS APPARTENANT A TOUS LES EXPLICATIONS :\n");
-            // printUniversalAxiom(listAxiom, intArray);
+            // System.out.println("\n\nICI SONT LES AXIOMS APPARTENANT A TOUS LES EXPLICATIONS :");
+            // printUniversalAxiom(listAxiom, intArray, explanations.size());
             
-            /// Recupere puis affiche les objets inconsistants (méthode de boucher)
+            // //Recupere puis affiche les objets inconsistants (méthode de boucher)
             // List<String> listObject = DetectionIndividualInconsistant(listAxiom);
             // System.out.println("\n\nObjects inconsistants :");
             // for (String s2 : listObject){
