@@ -10,27 +10,29 @@
 
 ### Compiler (avec maven)
 ```bash
-- mvn package
+mvn package
 ```
 ### Exécuter
 ```bash
-- java -jar target/my-project-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/my-project-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 # Créer - Instancier - Tester - Corriger une ontologie
 
 ## Dossier reasonner_java
 
-- Vérifier bien qu'il existe le dossier **CEO2**, **src** et les 5 fichiers .py :
-    - **main**
-    - **create_onto**
-    - **instantiation_onto**
-    - **test_inconsistance**
-    - **compute_counterfactual**
+- Vérifier qu'il existe les dossiers **CEO2** et **src**
+
+- Vérifier qu'il existe les 5 fichiers .py :
+    - **main.py**
+    - **create_onto.py**
+    - **instantiation_onto.py**
+    - **test_inconsistance.py**
+    - **compute_counterfactual.py**
 
 ### Exécuter le code
 ```bash
-- python3 main.py
+python3 main.py
 ```
 #### Dans le terminal
 - Choisissez les correctifs via le terminal pour chaque objet lorsque cela vous est demandé.
