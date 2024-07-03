@@ -6,14 +6,27 @@ from instantiation_onto import *
 from test_inconsistance import *
 from compute_conterfactual import *
 from ontology_correction import *
+import time
+
 
 if __name__ == "__main__":
-    create_ontologie()
-    instantiation_ontologie()
+    x1 = time.perf_counter()
 
+    create_ontologie()
+    x2 = time.perf_counter()
+
+    instantiation_ontologie()
+    x3 = time.perf_counter()
+
+    print("\n\ntemps creation onto :",(x2-x1),"\nTemps instantiation onto :", (x3-x2),"\n\n")
     val_incon = False
     while(val_incon == False):
+        x4 = time.perf_counter()
         val_cons, output = test_consistency()
+        x5 = time.perf_counter()
+
+        print("Temps raisonnement :", (x5-x4))
+
         if val_cons:
             print("Ontologie cohérente.")
             val_incon = True
@@ -48,7 +61,8 @@ if __name__ == "__main__":
                 print("pas de type :", i)
                 i.is_a.clear()
                 i.is_a.append(onto.Inconnu)
-
+    else :
+        exit(0)
 
     onto.save(file = "./src/main/resources/onto_herelles.owl", format = "rdfxml")
     
