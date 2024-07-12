@@ -112,8 +112,11 @@ def modify_object(tab_curr, tab_ok, tab_change):
                 tab_curr[j] = 0
 
     x = 0
+    # print("\n\n\n",len(tab_curr), tab_curr,"\n")
+    # print(len(tab_change), tab_change)
     for i in tab_curr:
         if not(i == 0):
+            # print("\n\n",i, tab_change[x])
             replace_object(i,tab_change[x])
             x = x+1
     return 0
@@ -162,5 +165,6 @@ def modify_solution(resultat):
                                 tab_ok.append(k)
                             else:
                                 tab_change.append(k)
+                        print(tab_curr[j][1],"\n",tab_ok,"\n",tab_change)
                         modify_object(tab_curr[j][1], tab_ok, tab_change)
                         break

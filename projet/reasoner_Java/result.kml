@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+ xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Folder>
+<name>result.kml</name>
+<GroundOverlay>
+<Icon>
+<href>image.tif</href>
+</Icon>
+<gx:LatLonQuad>
+<coordinates>
+7.7184127494993495,48.64602645128585 7.737414489993581,48.64623633454492 7.737010122314587,48.6624254824604 7.71800230017377,48.6622154803805</coordinates>
+</gx:LatLonQuad>
+</GroundOverlay>
+</Folder>
+</kml>

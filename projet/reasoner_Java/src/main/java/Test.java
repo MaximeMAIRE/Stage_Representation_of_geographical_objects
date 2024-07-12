@@ -32,6 +32,7 @@ public class Test {
      * @return Nothing.
      */
     public void loadOntology() throws OWLOntologyCreationException {
+        System.out.println("\n\nINCONSISTANT ICI \n\n\n\n");
         OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         OWLDataFactory dataFactory = manager.getOWLDataFactory();
         InputStream inputStream = getClass().getResourceAsStream("/onto_herelles.owl");
@@ -56,8 +57,10 @@ public class Test {
         OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
 
         if (reasoner.isConsistent()) {
+            System.out.println("\n\nCONSISTANT ICI \n\n\n\n");
             printConsistantOntology(reasoner, ontology);
         } else {
+            System.out.println("\n\nINCONSISTANT ICI \n\n\n\n");
             printInconsistentExplanation(reasonerFactory, df, manager, reasoner, ontology);
         }
         reasoner.dispose();
@@ -231,7 +234,7 @@ public class Test {
             // System.out.println(df.getOWLClass("http://test.org/onto_herelles.owl#obj_1"));
             System.out.println(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()));
            
-            Set<Explanation<OWLAxiom>> explanations = explainInconsistency.getExplanations(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()),100 );
+            Set<Explanation<OWLAxiom>> explanations = explainInconsistency.getExplanations(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()),1000);
             int x = 1;
             if (explanations != null && !explanations.isEmpty()){
                 for (Explanation<OWLAxiom> explanation : explanations){

@@ -39,7 +39,11 @@ if __name__ == "__main__":
         print("liste zone :",list_zone,"\nliste obj :", list_obj)
 
         # calcul des explications contrefactuelles et clean
+        x6 = time.perf_counter()
         list_string = exec_CEO(list_obj)
+        x7 = time.perf_counter()
+        print("Temps raisonnement :", (x7-x6))
+
         cf_final = clean_output_CEO(list_string, list_obj)
         # for i in cf_final:
         #     print(i,"\n")

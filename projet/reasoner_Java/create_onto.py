@@ -316,7 +316,7 @@ def create_ontologie():
     AllDifferent([Elements, Evolution_Process, Image, State_Geo, Valid_Time])
     AllDifferent([Object_Geo, Pixel, Zone])
 
-    AllDifferent([Eau, Espaces_agricoles, Espaces_forestiers_et_naturels, Surface_artificialisee, Ignorer, Inconnu])
+    AllDifferent([Eau, Espaces_agricoles, Espaces_forestiers_et_naturels, Surface_artificialisee, Inconnu])
     AllDifferent([Surface_en_eau_artificielle, Surface_en_eau_naturelle])
     AllDifferent([Bassin_artificiel, Canal])
     AllDifferent([Cours_deau, Etendue_deau])
