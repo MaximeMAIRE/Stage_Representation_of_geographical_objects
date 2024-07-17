@@ -60,17 +60,17 @@ def create_ontologie():
         pass
     class Bati_residentiel(Bati):
         pass
-    class TU_discontinu(Bati_residentiel):
+    class Tu_discontinu(Bati_residentiel):
         pass
-    class TU_discontinu_collectif(TU_discontinu):
+    class Tu_discontinu_collectif(Tu_discontinu):
         pass
-    class TU_discontinu_individuel(TU_discontinu):
+    class Tu_discontinu_individuel(Tu_discontinu):
         pass
-    class TU_continu(Bati_residentiel):
+    class Tu_continu(Bati_residentiel):
         pass
-    class TU_continu_collectif(TU_continu):
+    class Tu_continu_collectif(Tu_continu):
         pass
-    class TU_continu_individuel(TU_continu):
+    class Tu_continu_individuel(Tu_continu):
         pass
     class Bati_activite(Bati):
         pass
@@ -330,9 +330,9 @@ def create_ontologie():
     AllDifferent([Cimetiere, Piscine_exterieure, Place, Terrain_de_Sport, Terrain_vacant, Zone_dextraction, Zone_sportif_loisir])
     AllDifferent([Autre_Bati, Bati_activite, Bati_residentiel])
     AllDifferent([Bâtiment_rural, Serre, Zone_industrielle_commerciale_ou_tertiaire])
-    AllDifferent([TU_continu, TU_discontinu])
-    AllDifferent([TU_continu_individuel, TU_continu_collectif])
-    AllDifferent([TU_discontinu_collectif, TU_discontinu_individuel])
+    AllDifferent([Tu_continu, Tu_discontinu])
+    AllDifferent([Tu_continu_individuel, Tu_continu_collectif])
+    AllDifferent([Tu_discontinu_collectif, Tu_discontinu_individuel])
     AllDifferent([Equipement_transports, Voies_de_communication])
     AllDifferent([Carrefour, Echangeur, Ilot_de_circulation, Parking, Pont, Zone_aeroportuaire])
     AllDifferent([Autre_Route, Chemin, Chemin_de_fer, Route, Route_Grande_Vitesse])
