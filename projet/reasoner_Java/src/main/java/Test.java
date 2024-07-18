@@ -234,7 +234,7 @@ public class Test {
             // System.out.println(df.getOWLClass("http://test.org/onto_herelles.owl#obj_1"));
             System.out.println(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()));
            
-            Set<Explanation<OWLAxiom>> explanations = explainInconsistency.getExplanations(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()),1000);
+            Set<Explanation<OWLAxiom>> explanations = explainInconsistency.getExplanations(df.getOWLSubClassOfAxiom(df.getOWLThing(), df.getOWLNothing()),10);
             int x = 1;
             if (explanations != null && !explanations.isEmpty()){
                 for (Explanation<OWLAxiom> explanation : explanations){

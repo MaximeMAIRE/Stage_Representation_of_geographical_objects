@@ -11,15 +11,15 @@
     </classifiers>
   </description>
   <classes>
-    <class name="Cluster 1" color="-5570816" />
-    <class name="Cluster 2" color="-16711936" />
-    <class name="Route" color="-65366" />
-    <class name="Cluster 4" color="-22016" />
-    <class name="Cluster 5" color="-65536" />
-    <class name="Cluster 6" color="-16755201" />
-    <class name="Cluster 7" color="-16711681" />
-    <class name="Cluster 8" color="-11206401" />
-    <class name="Cluster 9" color="-16711851" />
+    <class name="Eau" color="-5570816" />
+    <class name="Eau" color="-16711936" />
+    <class name="Eau" color="-65366" />
+    <class name="Eau" color="-22016" />
+    <class name="Eau" color="-65536" />
+    <class name="Eau" color="-16755201" />
+    <class name="Eau" color="-16711681" />
+    <class name="Eau" color="-11206401" />
+    <class name="Eau" color="-16711851" />
   </classes>
   <values>
     <value>8</value>

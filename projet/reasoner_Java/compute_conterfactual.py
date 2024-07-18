@@ -1,12 +1,29 @@
 import subprocess
 from owlready2 import *
+from ontology_correction import get_str_obj
 
+def keep_objects(list_obj):
+    world1 = World()
+    onto = world1.get_ontology("./src/main/resources/onto_herelles.owl").load()
+
+    for i in onto.individuals():
+        if(type(i) == onto.Object_Geo):
+            name = get_str_obj(str(i))
+            if not(name in list_obj):
+                destroy_entity(i)
+
+    onto.save(file = "./onto_herelles_temp1.owl", format = "rdfxml")
+    return 0
 
 def exec_CEO(list_obj):
     list_string = []
+    
+    # Supprimer tous les objets != list_obj:
+    keep_objects(list_obj)
+
     for i in list_obj:
         world1 = World()
-        onto = world1.get_ontology("./src/main/resources/onto_herelles.owl").load()
+        onto = world1.get_ontology("./onto_herelles_temp1.owl").load()
         for j in list_obj:
             if j != i:
                 destroy_entity(getattr(onto, j))

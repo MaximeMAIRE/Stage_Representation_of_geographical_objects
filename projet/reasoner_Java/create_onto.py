@@ -76,7 +76,7 @@ def create_ontologie():
         pass
     class Zone_industrielle_commerciale_ou_tertiaire(Bati_activite):
         pass
-    class Bâtiment_rural(Bati_activite):
+    class Batiment_rural(Bati_activite):
         pass
     class Serre(Bati_activite):
         pass
@@ -225,6 +225,9 @@ def create_ontologie():
     class ZoneSA(Zone):
         pass
 
+    class ZoneA1(Zone):
+        pass
+
     # ajout de relation pour cette derniere :
     class has_rules(ObjectProperty, InverseFunctionalProperty, IrreflexiveProperty):
         namespace=onto
@@ -312,7 +315,9 @@ def create_ontologie():
     ZoneSA.equivalent_to.append(Zone & contains_object.only(Candidate_Final_State.only(Surface_artificialisee)))
     Zone_Z2.equivalent_to.append(Zone & contains_object.only(Candidate_Final_State.only(Vegetation_urbaine)) & contains_object.only(Candidate_Final_State.only(Not(createSome.some(Remblais)))))
     ZoneEau.equivalent_to.append(Zone & contains_object.only(Candidate_Final_State.some(Eau)))
-
+    ZoneA1.equivalent_to.append(Zone & contains_object.only(Candidate_Final_State.only(Espaces_forestiers_et_naturels | Espaces_agricoles )))
+    
+    
     AllDifferent([Elements, Evolution_Process, Image, State_Geo, Valid_Time])
     AllDifferent([Object_Geo, Pixel, Zone])
 
@@ -329,7 +334,7 @@ def create_ontologie():
     AllDifferent([Autre_artificialisation, Infrastructure_de_transport, Vegetation_urbaine, Bati])
     AllDifferent([Cimetiere, Piscine_exterieure, Place, Terrain_de_Sport, Terrain_vacant, Zone_dextraction, Zone_sportif_loisir])
     AllDifferent([Autre_Bati, Bati_activite, Bati_residentiel])
-    AllDifferent([Bâtiment_rural, Serre, Zone_industrielle_commerciale_ou_tertiaire])
+    AllDifferent([Batiment_rural, Serre, Zone_industrielle_commerciale_ou_tertiaire])
     AllDifferent([Tu_continu, Tu_discontinu])
     AllDifferent([Tu_continu_individuel, Tu_continu_collectif])
     AllDifferent([Tu_discontinu_collectif, Tu_discontinu_individuel])

@@ -16,8 +16,8 @@ if __name__ == "__main__":
     x2 = time.perf_counter()
 
     result_kml = "data/result.kml"
-    plu_decoup = "data/plu_decoupage.json"
-    img_fodomust = "data/test123.xml"
+    plu_decoup = "data/plu_zone_urba.json"
+    img_fodomust = "data/fodomust_9.xml"
     nb_ligne = 180
     nb_col = 140
     instantiation_ontologie(result_kml, plu_decoup, img_fodomust, nb_col, nb_ligne)

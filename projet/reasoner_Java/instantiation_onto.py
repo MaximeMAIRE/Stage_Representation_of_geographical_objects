@@ -9,6 +9,154 @@ from collections import Counter
 from shapely.geometry import Polygon, Point
 
 
+def fonctionF(final_type, str_state, onto):
+    match final_type:
+        case "Eau":
+            jardin = onto.Eau(str_state)
+        case "Surface_en_eau_artificielle":
+            jardin = onto.Surface_en_eau_artificielle(str_state)
+        case "Bassin_Artificiel":
+            jardin = onto.Bassin_Artificiel(str_state)
+        case "Canal":
+            jardin = onto.Canal(str_state)
+        case "Cours_deau":
+            jardin = onto.Cours_deau(str_state)
+        case "Etendue_deau":
+            jardin = onto.Etendue_deau(str_state)
+
+        case "Espaces_agricoles":
+            jardin = onto.Espaces_agricoles(str_state)
+        case "Autre_vegetation_agricole":
+            jardin = onto.Autre_vegetation_agricole(str_state)
+        case "Haie":
+            jardin = onto.Haie(str_state)
+        case "Element_boise_agricole":
+            jardin = onto.Element_boise_agricole(str_state)
+        case "Alignement_darbre_agricole":
+            jardin = onto.Alignement_darbre_agricole(str_state)
+        case "Groupe_darbres_agricole_sylviculture":
+            jardin = onto.Groupe_darbres_agricole_sylviculture(str_state)
+        case "Parcelle_agricole":
+            jardin = onto.Parcelle_agricole(str_state)
+        case "Autres_cultures":
+            jardin = onto.Autres_cultures(str_state)
+        case "Surface_herbeuse_agricole":
+            jardin = onto.Surface_herbeuse_agricole(str_state)
+        case "Vigne":
+            jardin = onto.Vigne(str_state)
+
+        case "Espaces_forestiers_et_naturels":
+            jardin = onto.Espaces_forestiers_et_naturels(str_state)
+        case "Espace_libre_naturel":
+            jardin = onto.Espace_libre_naturel(str_state)
+        case "Sable":
+            jardin = onto.Sable(str_state)
+        case "Foret":
+            jardin = onto.Foret(str_state)
+        case "Vegetation_autre":
+            jardin = onto.Vegetation_autre(str_state)
+        case "Surface_herbeuse_naturelle":
+            jardin = onto.Surface_herbeuse_naturelle(str_state)
+        case "Zones_humides":
+            jardin = onto.Zones_humides(str_state)
+
+        case "Ignorer":
+            jardin = onto.Ignorer(str_state)
+        case "Inconnu":
+            jardin = onto.Inconnu(str_state)
+
+        case "Surface_artificialisee":
+            jardin = onto.Surface_artificialisee(str_state)
+        case "Autre_artificialisation":
+            jardin = onto.Autre_artificialisation(str_state)
+        case "Cimetiere":
+            jardin = onto.Cimetiere(str_state)
+        case "Piscine_exterieure":
+            jardin = onto.Piscine_exterieure(str_state)
+        case "Place":
+            jardin = onto.Place(str_state)
+        case "Terrain_de_Sport":
+            jardin = onto.Terrain_de_Sport(str_state)
+        case "terrain_vacant":
+            jardin = onto.terrain_vacant(str_state)
+        case "Zone_dextraction":
+            jardin = onto.Zone_dextraction(str_state)
+        case "Zone_sportif_loisir":
+            jardin = onto.Zone_sportif_loisir(str_state)
+        case "Bati":
+            jardin = onto.Bati(str_state)
+        case "Autre_bati":
+            jardin = onto.Autre_bati(str_state)
+        case "Bati_activite":
+            jardin = onto.Bati_activite(str_state)
+        case "Batiment_rural":
+            jardin = onto.Batiment_rural(str_state)
+        case "Serre":
+            jardin = onto.Serre(str_state)
+        case "Zone_Industrielle_commerciale_ou_tertiaire":
+            jardin = onto.Zone_Industrielle_commerciale_ou_tertiaire(str_state)
+        case "Bati_residentiel":
+            jardin = onto.Bati_residentiel(str_state)
+        case "Tu_continu_collectif":
+            jardin = onto.Tu_continu_collectif(str_state)
+        case "Tu_continu_individuel":
+            jardin = onto.Tu_continu_individuel(str_state)
+        case "Tu_discontinu":
+            jardin = onto.Tu_discontinu(str_state)
+        case "Tu_discontinu_collectif":
+            jardin = onto.Tu_discontinu_collectif(str_state)
+        case "Tu_discontinu_individuel":
+            jardin = onto.Tu_discontinu_individuel(str_state)
+        case "Infrastructure_de_transport":
+            jardin = onto.Infrastructure_de_transport(str_state)
+        case "Equipement_transports":
+            jardin = onto.Equipement_transports(str_state)
+        case "Carrefour":
+            jardin = onto.Carrefour(str_state)
+        case "Echangeur":
+            jardin = onto.Echangeur(str_state)
+        case "Ilot_de_circulation":
+            jardin = onto.Ilot_de_circulation(str_state)
+        case "Parking":
+            jardin = onto.Parking(str_state)
+        case "Pont":
+            jardin = onto.Pont(str_state)
+        case "Zone_aeroportuaire":
+            jardin = onto.Zone_aeroportuaire(str_state)
+        case "Voies_de_communication":
+            jardin = onto.Voies_de_communication(str_state)
+        case "Autre_Route":
+            jardin = onto.Autre_Route(str_state)
+        case "Chemin":
+            jardin = onto.Chemin(str_state)
+        case "Chemin_de_fer":
+            jardin = onto.Chemin_de_fer(str_state)
+        case "Route":
+            jardin = onto.Route(str_state)
+        case "Route_Grande_Vitesse":
+            jardin = onto.Route_Grande_Vitesse(str_state)
+        case "Vegetation_urbaine":
+            jardin = onto.Vegetation_urbaine(str_state)
+        case "Alignement_darbres_urbain":
+            jardin = onto.Alignement_darbres_urbain(str_state)
+        case "Arbre_urbain":
+            jardin = onto.Arbre_urbain(str_state)
+        case "Ensemble_darbres_urbain":
+            jardin = onto.Ensemble_darbres_urbain(str_state)
+        case "Jardin":
+            jardin = onto.Jardin(str_state)
+        case "Parc":
+            jardin = onto.Parc(str_state)
+        case "Pelouse":
+            jardin = onto.Pelouse(str_state)
+
+        case _:
+            print("je suis final_type: ", final_type, "et je n'appartient pas aux cas precedent !")
+            jardin = onto.Ignorer(str_state)
+
+    return jardin
+
+
 def extract_coordinates(kml_file):
     tree = ET.parse(kml_file)
     root = tree.getroot()
@@ -92,11 +240,11 @@ def import_image(name_file, size_col):
                     tab_test = []
     image = np.array(tab)
 
-    return image
+    return image, tab_cluster
 
 def delete_artifacts_from_image(image):
     objects, num = measure.label(image, background=0, connectivity=2, return_num = True)
-    large_objects = morphology.remove_small_objects(objects, min_size=12, connectivity=3)
+    large_objects = morphology.remove_small_objects(objects, min_size=10, connectivity=3)
 
     small_objects = objects ^ large_objects
     large_objects2 = np.copy(large_objects)
@@ -173,6 +321,7 @@ def view_image(final_objects, image):
                 case 10:
                     temp.append([100,0,100])
                 case _:
+                    temp.append([255,255,255])
                     print(final_objects[i][j])
         image_finale.append(temp)
 
@@ -220,45 +369,60 @@ def view_image(final_objects, image):
 
 
 def image_enhancement(name_file, size_col):
-    image = import_image(name_file, size_col)
+    image, tab_name_cluster = import_image(name_file, size_col)
     large_objects2, final_objects = delete_artifacts_from_image(image)
     final_objects = reconstitute_image(image,large_objects2,final_objects)
 
     view_image(final_objects,image)
 
-    return final_objects
+    return final_objects, tab_name_cluster
 
 
 def image_to_data(name_file, size_col):
-    tab = image_enhancement(name_file, size_col)
+    tab, tab_name_cluster = image_enhancement(name_file, size_col)
 
     labels, num = skimage.measure.label(tab, background=-1, return_num= True, connectivity=2)
     regions = skimage.measure.regionprops(labels)
 
-    return tab, regions
+    return tab, regions, tab_name_cluster
 
 
 def extract_zone(kml_file, plu_file):
     tab_extracted_area = []
-    
+    label_of_zone = []
+
     df = pd.read_json(plu_file)
 
     df['coordinates'] = df['geo_shape'].apply(lambda x: x['geometry']['coordinates'])
 
-    df_5000 = df.loc[df['echelle'] == '1/2000']
+    # df_5000 = df.loc[df['echelle'] == '1/2000']
     coords = extract_coordinates(kml_file)
     polygon_image = Polygon(coords)
+    #######
+    fig, ax = plt.subplots(sharex=True, sharey=True, figsize=(15, 10))
 
-    for i in df_5000.index:
+
+    # for i in df_5000.index:
+    for i in df.index:
         liste_coords = df["coordinates"][i]
         liste_coords = liste_coords[0]
 
         polygon_temp = Polygon(liste_coords)
         x = polygon_temp.intersection(polygon_image)
+
         if(x):
             tab_extracted_area.append(liste_coords)
+            label_of_zone.append(df["type"][i])
+            ### afichage (inutile)
+            ax.plot(*polygon_temp.exterior.xy, color='blue')
 
-    return tab_extracted_area
+    ### afichage (inutile)
+    ax.plot(*polygon_image.exterior.xy, color='red')
+    plt.show()
+
+
+
+    return tab_extracted_area, label_of_zone
 
 def detect_obj_in_zone(zone, region, big_tab, tab_obj):
 
@@ -270,8 +434,9 @@ def detect_obj_in_zone(zone, region, big_tab, tab_obj):
             if(p.covered_by(poly)):
                 res.append(tab_obj[i])
                 break
-                
+
     return res
+
 
 def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
     coords_point = extract_coordinates(kml_file)
@@ -292,7 +457,7 @@ def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
     onto = get_ontology("./src/main/resources/onto_herelles.owl").load()
 
     with onto:
-        tab, regions = image_to_data(name_file, nb_col)
+        tab, regions, tab_name_cluster = image_to_data(name_file, nb_col)
 
         k = 0
         k2 = 0
@@ -301,11 +466,6 @@ def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
             px_tab = []
 
             str_state = "State_jardin_" + str(k2)
-            
-            if(i == 38) | (i ==108):
-                jardin = onto.Zone_industrielle_commerciale_ou_tertiaire(str_state)
-            else:
-                jardin = onto.Jardin(str_state)
 
             for j in range(len(regions[i].coords)):
                 str_pixel = "Px_" + str(k)
@@ -316,24 +476,30 @@ def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
                 # px_tab.append(px)
                 k = k+1
 
+            final_type = tab_name_cluster[val-1]
+            jardin = fonctionF(final_type, str_state, onto)
+
             str_obj = "obj_" + str(k2)
             obj1 = onto.Object_Geo(str_obj, has_pixels = px_tab, Candidate_Final_State = [jardin])
             tab_obj.append(obj1)
             k2 = k2+1
 
 
-        tab_extracted_area = extract_zone(kml_file, plu_file)
-        print("je suis :", tab_extracted_area, len(tab_extracted_area))
+        tab_extracted_area, label_of_zone = extract_zone(kml_file, plu_file)
+        # print("je suis :", tab_extracted_area, len(tab_extracted_area))
         tab_of_zone = []
         for i in range(len(tab_extracted_area)):
-            name_zone = "zone_" + str(i)
+            name_zone = "zone_" + label_of_zone[i]+ "_" + str(i)
             list_link_zone = detect_obj_in_zone(tab_extracted_area[i], regions, big_tab, tab_obj)
-            if(i == 4):
-                z = onto.ZoneSA(name_zone, contains_object = list_link_zone)
-            else:
-                z = onto.ZoneArticle1(name_zone, contains_object = list_link_zone)
-            tab_of_zone.append(z)
 
+            match label_of_zone[i]:
+                case "A1":
+                    z = onto.ZoneA1(name_zone, contains_object = list_link_zone)
+                case _:
+                    z = onto.ZoneArticle1(name_zone, contains_object = list_link_zone)
+
+            tab_of_zone.append(z)
+            
         img_1 = onto.Image("Img", composed_by = tab_obj)
         img_2 = onto.Image("Img2", has_rules= tab_of_zone)
 
