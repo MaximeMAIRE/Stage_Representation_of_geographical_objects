@@ -34,7 +34,7 @@
 <owl:ObjectProperty rdf:about="#has_state">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
   <rdfs:domain rdf:resource="#Elements"/>
-  <rdfs:range rdf:resource="#State_Geo"/>
+  <rdfs:range rdf:resource="#State_geo"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#is_involved">
@@ -51,7 +51,7 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
   <rdfs:range rdf:resource="#Valid_Time"/>
-  <rdfs:domain rdf:resource="#State_Geo"/>
+  <rdfs:domain rdf:resource="#State_geo"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_rules">
@@ -78,7 +78,7 @@
 <owl:ObjectProperty rdf:about="#Candidate_Final_State">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
   <rdfs:domain rdf:resource="#Elements"/>
-  <rdfs:range rdf:resource="#State_Geo"/>
+  <rdfs:range rdf:resource="#State_geo"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#is_in">
@@ -102,7 +102,7 @@
 
 <owl:ObjectProperty rdf:about="#createSome">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-  <rdfs:domain rdf:resource="#State_Geo"/>
+  <rdfs:domain rdf:resource="#State_geo"/>
   <rdfs:range rdf:resource="#Obstacle"/>
 </owl:ObjectProperty>
 
@@ -137,7 +137,7 @@
   <rdfs:subClassOf rdf:resource="#Elements"/>
 </owl:Class>
 
-<owl:Class rdf:about="#State_Geo">
+<owl:Class rdf:about="#State_geo">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -194,15 +194,15 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Inconnu">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Ignorer">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Surface_artificialisee">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Vegetation_urbaine">
@@ -378,7 +378,7 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Eau">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Surface_en_eau_artificielle">
@@ -409,7 +409,7 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Espaces_agricoles">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Parcelle_agricole">
@@ -453,7 +453,7 @@
 </owl:Class>
 
 <owl:Class rdf:about="#Espaces_forestiers_et_naturels">
-  <rdfs:subClassOf rdf:resource="#State_Geo"/>
+  <rdfs:subClassOf rdf:resource="#State_geo"/>
 </owl:Class>
 
 <owl:Class rdf:about="#Foret">
@@ -638,1110 +638,1105 @@
 </owl:Class>
 
 <owl:NamedIndividual rdf:about="#State_jardin_0">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_1">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_1">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_2">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_3">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_4">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_5">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_6">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_7">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_7">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_7"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_8">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_9">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_10">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_11">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_12">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_13">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_14">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_15">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_16">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_17">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_18">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_19">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_20">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_21">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_22">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_23">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_24">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_25">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_26">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_27">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_28">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_29">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_30">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_30">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_30"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_31">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_32">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_33">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_33">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_33"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_34">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_35">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_36">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_37">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_38">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_39">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_39">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_39"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_40">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_41">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_42">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_43">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_44">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_45">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_46">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_47">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_48">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_49">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_50">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_51">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_52">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_53">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_54">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_55">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_56">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_57">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_58">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_59">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_60">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_61">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_62">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_63">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_64">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_65">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_66">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_66">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_66"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_67">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_68">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_69">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_69">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_69"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_70">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_71">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_72">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_73">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_74">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_75">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_76">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_77">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_78">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_79">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_80">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_81">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_82">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_83">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_84">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_85">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_86">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_87">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_88">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_89">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_90">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_91">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_92">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_93">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_94">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_95">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_96">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_97">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_98">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_99">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_100">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_101">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_102">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_103">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_104">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_105">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_106">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_107">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_108">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_109">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_110">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_111">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_112">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_113">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_114">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_115">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_116">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_117">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_118">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_119">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_120">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_121">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_122">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_123">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_124">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_125">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_126">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_127">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_128">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_129">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_130">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_130">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_130"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_131">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_132">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_132">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_132"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_133">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_134">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_135">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_136">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_137">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_138">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_139">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_140">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_141">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_142">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_143">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_144">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_145">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_146">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_147">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_148">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_148">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_148"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_149">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_150">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_151">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_152">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_153">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_154">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_155">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_156">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_157">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_158">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_159">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_160">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_161">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_162">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_163">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_164">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_165">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_166">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_167">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_168">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_169">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_170">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_171">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_172">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_173">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_174">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_175">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_176">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_177">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_178">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_179">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_180">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_181">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_182">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_183">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_184">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_184">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_184"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_185">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_186">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_187">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_188">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_189">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_189">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_189"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_190">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_191">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_192">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_193">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_194">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_195">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_196">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_197">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_198">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_198">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_198"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_199">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_200">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_200">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_200"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_201">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_202">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_203">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_203">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_203"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_204">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_205">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_206">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#obj_206">
+  <rdf:type rdf:resource="#Object_Geo"/>
+  <Candidate_Final_State rdf:resource="#State_jardin_206"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_207">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_208">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Bati"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_209">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_210">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_211">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_212">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_213">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_214">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_215">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_216">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_217">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Route"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_218">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_219">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_220">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_221">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_222">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_223">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_224">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_225">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_226">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_227">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_228">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_229">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#obj_229">
-  <rdf:type rdf:resource="#Object_Geo"/>
-  <Candidate_Final_State rdf:resource="#State_jardin_229"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_230">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_231">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_232">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_233">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_234">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_235">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_236">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_237">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_238">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_239">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_240">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_241">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_242">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_243">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_244">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_245">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_246">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_247">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_248">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Autres_cultures"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_249">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Surface_herbeuse_agricole"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_250">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_251">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_252">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Vigne"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_253">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#State_jardin_254">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#State_jardin_255">
-  <rdf:type rdf:resource="#Eau"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#State_jardin_256">
-  <rdf:type rdf:resource="#Eau"/>
+  <rdf:type rdf:resource="#Ignorer"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UXb4_0">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_A1_1">
   <rdf:type rdf:resource="#ZoneA1"/>
-  <contains_object rdf:resource="#obj_130"/>
-  <contains_object rdf:resource="#obj_132"/>
+  <contains_object rdf:resource="#obj_1"/>
+  <contains_object rdf:resource="#obj_33"/>
+  <contains_object rdf:resource="#obj_39"/>
+  <contains_object rdf:resource="#obj_66"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UCA2_2">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UXd1_3">
   <rdf:type rdf:resource="#ZoneArticle1"/>
-  <contains_object rdf:resource="#obj_132"/>
+  <contains_object rdf:resource="#obj_1"/>
+  <contains_object rdf:resource="#obj_33"/>
+  <contains_object rdf:resource="#obj_39"/>
+  <contains_object rdf:resource="#obj_66"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UXd1_4">
   <rdf:type rdf:resource="#ZoneArticle1"/>
-  <contains_object rdf:resource="#obj_132"/>
-  <contains_object rdf:resource="#obj_200"/>
-  <contains_object rdf:resource="#obj_229"/>
+  <contains_object rdf:resource="#obj_1"/>
+  <contains_object rdf:resource="#obj_148"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_IIAUX_5">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_7"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UB5_6">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UXd1_7">
@@ -1770,6 +1765,8 @@
 
 <owl:NamedIndividual rdf:about="#zone_IAUXd_13">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_7"/>
+  <contains_object rdf:resource="#obj_30"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UB6_14">
@@ -1778,43 +1775,43 @@
 
 <owl:NamedIndividual rdf:about="#zone_A1_15">
   <rdf:type rdf:resource="#ZoneA1"/>
-  <contains_object rdf:resource="#obj_69"/>
-  <contains_object rdf:resource="#obj_184"/>
-  <contains_object rdf:resource="#obj_189"/>
-  <contains_object rdf:resource="#obj_198"/>
-  <contains_object rdf:resource="#obj_203"/>
+  <contains_object rdf:resource="#obj_7"/>
+  <contains_object rdf:resource="#obj_30"/>
+  <contains_object rdf:resource="#obj_148"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_IAUXd_16">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_148"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_IAUXd_17">
   <rdf:type rdf:resource="#ZoneArticle1"/>
-  <contains_object rdf:resource="#obj_69"/>
+  <contains_object rdf:resource="#obj_7"/>
+  <contains_object rdf:resource="#obj_30"/>
+  <contains_object rdf:resource="#obj_148"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_A1_18">
   <rdf:type rdf:resource="#ZoneA1"/>
-  <contains_object rdf:resource="#obj_132"/>
-  <contains_object rdf:resource="#obj_200"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_IAUA2_19">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_A1_20">
   <rdf:type rdf:resource="#ZoneA1"/>
-  <contains_object rdf:resource="#obj_184"/>
-  <contains_object rdf:resource="#obj_189"/>
-  <contains_object rdf:resource="#obj_198"/>
-  <contains_object rdf:resource="#obj_203"/>
-  <contains_object rdf:resource="#obj_229"/>
+  <contains_object rdf:resource="#obj_7"/>
+  <contains_object rdf:resource="#obj_148"/>
+  <contains_object rdf:resource="#obj_206"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_IIAUX_21">
   <rdf:type rdf:resource="#ZoneArticle1"/>
+  <contains_object rdf:resource="#obj_7"/>
+  <contains_object rdf:resource="#obj_30"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#zone_UB5_22">
@@ -1823,15 +1820,14 @@
 
 <owl:NamedIndividual rdf:about="#Img">
   <rdf:type rdf:resource="#Image"/>
-  <composed_by rdf:resource="#obj_69"/>
-  <composed_by rdf:resource="#obj_130"/>
-  <composed_by rdf:resource="#obj_132"/>
-  <composed_by rdf:resource="#obj_184"/>
-  <composed_by rdf:resource="#obj_189"/>
-  <composed_by rdf:resource="#obj_198"/>
-  <composed_by rdf:resource="#obj_200"/>
-  <composed_by rdf:resource="#obj_203"/>
-  <composed_by rdf:resource="#obj_229"/>
+  <composed_by rdf:resource="#obj_1"/>
+  <composed_by rdf:resource="#obj_7"/>
+  <composed_by rdf:resource="#obj_30"/>
+  <composed_by rdf:resource="#obj_33"/>
+  <composed_by rdf:resource="#obj_39"/>
+  <composed_by rdf:resource="#obj_66"/>
+  <composed_by rdf:resource="#obj_148"/>
+  <composed_by rdf:resource="#obj_206"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Img2">
@@ -1986,7 +1982,7 @@
     <rdf:Description rdf:about="#Elements"/>
     <rdf:Description rdf:about="#Evolution_Process"/>
     <rdf:Description rdf:about="#Image"/>
-    <rdf:Description rdf:about="#State_Geo"/>
+    <rdf:Description rdf:about="#State_geo"/>
     <rdf:Description rdf:about="#Valid_Time"/>
   </owl:members>
 </owl:AllDisjointClasses>

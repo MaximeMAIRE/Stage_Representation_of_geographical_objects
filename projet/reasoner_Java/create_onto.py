@@ -31,16 +31,16 @@ def create_ontologie():
         pass
 
     ### Herelles Module
-    class State_Geo(Thing):
+    class State_geo(Thing):
         namespace=onto
 
-    class Inconnu(State_Geo):
+    class Inconnu(State_geo):
         pass
 
-    class Ignorer (State_Geo):
+    class Ignorer (State_geo):
         pass
 
-    class Surface_artificialisee(State_Geo):
+    class Surface_artificialisee(State_geo):
         pass
     class Vegetation_urbaine(Surface_artificialisee):
         pass
@@ -127,7 +127,7 @@ def create_ontologie():
     class Zone_dextraction(Autre_artificialisation):
         pass
 
-    class Eau(State_Geo):
+    class Eau(State_geo):
         pass
     class Surface_en_eau_artificielle(Eau):
         pass
@@ -142,7 +142,7 @@ def create_ontologie():
     class Cours_deau(Surface_en_eau_naturelle):
         pass
 
-    class Espaces_agricoles(State_Geo):
+    class Espaces_agricoles(State_geo):
         pass
     class Parcelle_agricole(Espaces_agricoles):
         pass
@@ -165,7 +165,7 @@ def create_ontologie():
     class Haie(Autre_vegetation_agricole):
         pass
 
-    class Espaces_forestiers_et_naturels(State_Geo):
+    class Espaces_forestiers_et_naturels(State_geo):
         pass
     class Foret(Espaces_forestiers_et_naturels):
         pass
@@ -192,7 +192,7 @@ def create_ontologie():
     class has_state(ObjectProperty, IrreflexiveProperty):
         namespace=onto
         domain    = [Elements]
-        range     = [State_Geo]
+        range     = [State_geo]
     class is_involved(ObjectProperty):
         namespace=onto
         domain    = [Elements]
@@ -203,7 +203,7 @@ def create_ontologie():
         range     = [Valid_Time]
     class has_time(ObjectProperty, FunctionalProperty, IrreflexiveProperty):
         namespace=onto
-        domain    = [State_Geo]
+        domain    = [State_geo]
         range     = [Valid_Time]
 
     ### ajout de la classe Zone :
@@ -242,7 +242,7 @@ def create_ontologie():
     class Candidate_Final_State(ObjectProperty, IrreflexiveProperty):
         namespace=onto
         domain    = [Elements]
-        range     = [State_Geo]
+        range     = [State_geo]
 
     class is_in(ObjectProperty, IrreflexiveProperty):
         namespace=onto
@@ -300,7 +300,7 @@ def create_ontologie():
 
     class createSome(ObjectProperty, IrreflexiveProperty):
         namespace=onto
-        domain    = [State_Geo]
+        domain    = [State_geo]
         range     = [Obstacle]
 
     try:
@@ -318,7 +318,7 @@ def create_ontologie():
     ZoneA1.equivalent_to.append(Zone & contains_object.only(Candidate_Final_State.only(Espaces_forestiers_et_naturels | Espaces_agricoles )))
     
     
-    AllDifferent([Elements, Evolution_Process, Image, State_Geo, Valid_Time])
+    AllDifferent([Elements, Evolution_Process, Image, State_geo, Valid_Time])
     AllDifferent([Object_Geo, Pixel, Zone])
 
     AllDifferent([Eau, Espaces_agricoles, Espaces_forestiers_et_naturels, Surface_artificialisee, Inconnu])

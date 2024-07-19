@@ -28,7 +28,7 @@ def exec_CEO(list_obj):
             if j != i:
                 destroy_entity(getattr(onto, j))
         onto.save(file = "./onto_herelles.owl", format = "rdfxml")
-        python_command = ["python3","./CEO2/main.py",i,'Object_Geo'] #State_Geo si on rajoute les remblais
+        python_command = ["python3","./CEO2/main.py",i,'Object_Geo'] #State_geo si on rajoute les remblais
         counterfactual_output = subprocess.run(python_command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         list_string.append(str(counterfactual_output.stdout))
     return list_string

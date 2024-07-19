@@ -244,7 +244,7 @@ def import_image(name_file, size_col):
 
 def delete_artifacts_from_image(image):
     objects, num = measure.label(image, background=0, connectivity=2, return_num = True)
-    large_objects = morphology.remove_small_objects(objects, min_size=10, connectivity=3)
+    large_objects = morphology.remove_small_objects(objects, min_size=12, connectivity=2)
 
     small_objects = objects ^ large_objects
     large_objects2 = np.copy(large_objects)
@@ -503,6 +503,7 @@ def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
         img_1 = onto.Image("Img", composed_by = tab_obj)
         img_2 = onto.Image("Img2", has_rules= tab_of_zone)
 
+        # Exemple tout simple :
 
         # t1 = onto.Valid_Time("t1")
         # Bati_indu = onto.Zone_industrielle_commerciale_ou_tertiaire("bati_industrielle", has_time = t1)
