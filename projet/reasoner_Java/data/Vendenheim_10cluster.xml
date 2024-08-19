@@ -11,16 +11,16 @@
     </classifiers>
   </description>
   <classes>
-    <class name="Surface_herbeuse_agricole" color="-16711681" />
-    <class name="Cluster 2" color="-65383" />
-    <class name="Bati" color="-13434625" />
-    <class name="Autres_cultures" color="-13369600" />
-    <class name="Route" color="-3407617" />
-    <class name="Bati" color="-3342592" />
-    <class name="Vigne" color="-16750849" />
-    <class name="Surface_herbeuse_agricole" color="-16711834" />
-    <class name="Surface_herbeuse_agricole" color="-26368" />
-    <class name="Cluster 10" color="-65536" />
+    <class name="Bati" color="-16711681" />
+    <class name="2" color="-65383" />
+    <class name="3" color="-13434625" />
+    <class name="4" color="-13369600" />
+    <class name="5" color="-3407617" />
+    <class name="6" color="-3342592" />
+    <class name="7" color="-16750849" />
+    <class name="8" color="-16711834" />
+    <class name="9" color="-26368" />
+    <class name="10" color="-65536" />
   </classes>
   <values>
     <value>9</value>

@@ -438,71 +438,74 @@ def detect_obj_in_zone(zone, region, big_tab, tab_obj):
     return res
 
 
-def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
-    coords_point = extract_coordinates(kml_file)
+def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne, exemple):
+    if exemple == 0:
+        coords_point = extract_coordinates(kml_file)
 
-    y, a, x, b = calcul_droite(coords_point[0],coords_point[3])
-    tabb1 = calcul_point_droite(a, x, b, coords_point[0], coords_point[3], nb_ligne)
+        y, a, x, b = calcul_droite(coords_point[0],coords_point[3])
+        tabb1 = calcul_point_droite(a, x, b, coords_point[0], coords_point[3], nb_ligne)
 
-    y, a, x, b = calcul_droite(coords_point[1],coords_point[2])
-    tabb2 = calcul_point_droite(a, x, b, coords_point[1], coords_point[2], nb_ligne)
+        y, a, x, b = calcul_droite(coords_point[1],coords_point[2])
+        tabb2 = calcul_point_droite(a, x, b, coords_point[1], coords_point[2], nb_ligne)
 
-    big_tab = []
+        big_tab = []
 
-    for i in range(len(tabb1)):
-        y, a, x, b = calcul_droite(tabb1[i],tabb2[i])
-        tabbx = calcul_point_droite(a, x, b, tabb1[i], tabb2[i], nb_col)
-        big_tab.append(tabbx)
+        for i in range(len(tabb1)):
+            y, a, x, b = calcul_droite(tabb1[i],tabb2[i])
+            tabbx = calcul_point_droite(a, x, b, tabb1[i], tabb2[i], nb_col)
+            big_tab.append(tabbx)
 
-    onto = get_ontology("./src/main/resources/onto_herelles.owl").load()
+        onto = get_ontology("./src/main/resources/onto_herelles.owl").load()
 
-    with onto:
-        tab, regions, tab_name_cluster = image_to_data(name_file, nb_col)
+        with onto:
+            tab, regions, tab_name_cluster = image_to_data(name_file, nb_col)
 
-        k = 0
-        k2 = 0
-        tab_obj = []
-        for i in range(len(regions)):
-            px_tab = []
+            k = 0
+            k2 = 0
+            tab_obj = []
+            for i in range(len(regions)):
+                px_tab = []
 
-            str_state = "State_jardin_" + str(k2)
+                str_state = "State_jardin_" + str(k2)
 
-            for j in range(len(regions[i].coords)):
-                str_pixel = "Px_" + str(k)
-                x = int(regions[i].coords[j][0])
-                y = int(regions[i].coords[j][1])
-                val = tab[x][y]
-                # px = onto.Pixel(str_pixel, hasPostitionX = [big_tab[x][y][0]], hasPostitionY = [big_tab[x][y][1]], hasValueClust = [int(val)])
-                # px_tab.append(px)
-                k = k+1
+                for j in range(len(regions[i].coords)):
+                    str_pixel = "Px_" + str(k)
+                    x = int(regions[i].coords[j][0])
+                    y = int(regions[i].coords[j][1])
+                    val = tab[x][y]
+                    # px = onto.Pixel(str_pixel, hasPostitionX = [big_tab[x][y][0]], hasPostitionY = [big_tab[x][y][1]], hasValueClust = [int(val)])
+                    # px_tab.append(px)
+                    k = k+1
 
-            final_type = tab_name_cluster[val-1]
-            jardin = fonctionF(final_type, str_state, onto)
+                final_type = tab_name_cluster[val-1]
+                jardin = fonctionF(final_type, str_state, onto)
 
-            str_obj = "obj_" + str(k2)
-            obj1 = onto.Object_Geo(str_obj, has_pixels = px_tab, Candidate_Final_State = [jardin])
-            tab_obj.append(obj1)
-            k2 = k2+1
+                str_obj = "obj_" + str(k2)
+                obj1 = onto.Object_Geo(str_obj, has_pixels = px_tab, Candidate_Final_State = [jardin])
+                tab_obj.append(obj1)
+                k2 = k2+1
 
 
-        tab_extracted_area, label_of_zone = extract_zone(kml_file, plu_file)
-        # print("je suis :", tab_extracted_area, len(tab_extracted_area))
-        tab_of_zone = []
-        for i in range(len(tab_extracted_area)):
-            name_zone = "zone_" + label_of_zone[i]+ "_" + str(i)
-            list_link_zone = detect_obj_in_zone(tab_extracted_area[i], regions, big_tab, tab_obj)
+            tab_extracted_area, label_of_zone = extract_zone(kml_file, plu_file)
+            # print("je suis :", tab_extracted_area, len(tab_extracted_area))
+            tab_of_zone = []
+            for i in range(len(tab_extracted_area)):
+                name_zone = "zone_" + label_of_zone[i]+ "_" + str(i)
+                list_link_zone = detect_obj_in_zone(tab_extracted_area[i], regions, big_tab, tab_obj)
 
-            match label_of_zone[i]:
-                case "A1":
-                    z = onto.ZoneA1(name_zone, contains_object = list_link_zone)
-                case _:
-                    z = onto.ZoneArticle1(name_zone, contains_object = list_link_zone)
+                match label_of_zone[i]:
+                    case "A1":
+                        z = onto.ZoneA1(name_zone, contains_object = list_link_zone)
+                    case _:
+                        z = onto.ZoneArticle1(name_zone, contains_object = list_link_zone)
 
-            tab_of_zone.append(z)
-            
-        img_1 = onto.Image("Img", composed_by = tab_obj)
-        img_2 = onto.Image("Img2", has_rules= tab_of_zone)
+                tab_of_zone.append(z)
+                
+            img_1 = onto.Image("Img", composed_by = tab_obj)
+            img_2 = onto.Image("Img2", has_rules= tab_of_zone)
 
+    else :
+        onto = get_ontology("./src/main/resources/onto_herelles.owl").load()
         # Exemple tout simple :
 
         # t1 = onto.Valid_Time("t1")
@@ -527,38 +530,36 @@ def instantiation_ontologie(kml_file, plu_file, name_file, nb_col, nb_ligne):
         # ### Zone
         # z1 = onto.ZoneArticle1("zone_1", z_has_pixels = [px1], contains_object = [obj1])
         # z2 = onto.ZoneEA("zone_2", z_has_pixels = [px1, px2], contains_object = [obj1, obj2])
-        # z3 = onto.ZoneEA("zone_3", z_has_pixels = [px3, px4], contains_object = [obj3, obj4])
+        # z3 = onto.ZoneEA("zone_3",_has_pixels = [px3, px4], contains_object = [obj3, obj4])
 
         # ### Image creation :
         # img_1 = onto.Image("Img", composed_by = [obj1, obj2, obj3, obj4])
         # img_2 = onto.Image("Img2", has_rules= [z1, z2])
 
         ####################################""""
+        with onto:
+            t1 = onto.Valid_Time("t1")
+            Bati_indu = onto.Zone_industrielle_commerciale_ou_tertiaire("bati_industrielle", has_time = t1)
+            bati_act = onto.Bati_activite("bati_act", has_time = t1)
+            EA = onto.Espaces_agricoles("EA_1", has_time = t1)
+            EA2 = onto.Espaces_agricoles("EA_2", has_time = t1)
 
-        # t1 = onto.Valid_Time("t1")
-        # Bati_indu = onto.Zone_industrielle_commerciale_ou_tertiaire("bati_industrielle", has_time = t1)
-        # bati_act = onto.Bati_activite("bati_act", has_time = t1)
-        # EA = onto.Espaces_agricoles("EA_1", has_time = t1)
-        # EA2 = onto.Espaces_agricoles("EA_2", has_time = t1)
-        # inc = onto.Inconnu("inc_1", has_time = t1)
+            # Pixel
+            px1 = onto.Pixel("Px_1", has_state = [Bati_indu])
+            px2 = onto.Pixel("Px_2", has_state = [Bati_indu])
 
-        # # Pixel
-        # px1 = onto.Pixel("Px_1", has_state = [Bati_indu])
-        # px2 = onto.Pixel("Px_2", has_state = [Bati_indu])
+            # Object
+            obj1 = onto.Object_Geo("obj_1", has_pixels = [px1,px2], Candidate_Final_State = [Bati_indu])
 
-        # # Object
-        # obj1 = onto.Object_Geo("obj_1", has_pixels = [px1,px2], has_state = [Bati_indu], Candidate_Final_State = [Bati_indu])
-        # # obj1 = onto.Object_Geo("obj_1", has_pixels = [px1,px2], has_state = [Bati_indu], Candidate_Final_State = [inc])
+            ### Zone
+            z1 = onto.ZoneArticle1("zone_1", z_has_pixels = [px1], contains_object = [obj1])
+            z2 = onto.ZoneEA("zone_2", z_has_pixels = [px2], contains_object = [obj1])
+            # z1 = ZoneArticle1("zone_1", z_has_pixels = [px1])
+            # z2 = ZoneEA("zone_2", z_has_pixels = [px2], Candidate_Final_State = [EA])
 
-        # ### Zone
-        # z1 = onto.ZoneArticle1("zone_1", z_has_pixels = [px1], contains_object = [obj1])
-        # z2 = onto.ZoneEA("zone_2", z_has_pixels = [px2], Candidate_Final_State = [EA], contains_object = [obj1])
-        # # z1 = ZoneArticle1("zone_1", z_has_pixels = [px1])
-        # # z2 = ZoneEA("zone_2", z_has_pixels = [px2], Candidate_Final_State = [EA])
+            ### Image creation :
+            img_1 = onto.Image("Img", composed_by = [obj1])
+            img_2 = onto.Image("Img2", has_rules= [z1,z2])
 
-        # ### Image creation :
-        # img_1 = onto.Image("Img", composed_by = [obj1])
-        # img_2 = onto.Image("Img2", has_rules= [z1,z2])
-
-        onto.save(file = "./src/main/resources/onto_herelles.owl", format = "rdfxml")
-        onto.save(file = "./onto_herelles.owl", format = "rdfxml")
+    onto.save(file = "./src/main/resources/onto_herelles.owl", format = "rdfxml")
+    onto.save(file = "./onto_herelles.owl", format = "rdfxml")

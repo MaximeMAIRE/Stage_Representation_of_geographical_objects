@@ -18,9 +18,10 @@ if __name__ == "__main__":
     result_kml = "data/result.kml"
     plu_decoup = "data/plu_zone_urba.json"
     img_fodomust = "data/Vendenheim_10cluster.xml"
+    img_fodomust = "data/result_rapport.xml"
     nb_ligne = 180
     nb_col = 140
-    instantiation_ontologie(result_kml, plu_decoup, img_fodomust, nb_col, nb_ligne)
+    instantiation_ontologie(result_kml, plu_decoup, img_fodomust, nb_col, nb_ligne, exemple = 0)
     x3 = time.perf_counter()
 
     print("\n\ntemps creation onto :",(x2-x1),"\nTemps instantiation onto :", (x3-x2),"\n\n")
